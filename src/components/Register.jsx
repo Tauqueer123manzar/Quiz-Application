@@ -4,13 +4,14 @@ import { useState } from 'react';
 import {useNavigate} from 'react-router-dom';
 import Topbar from './Topbar';
 const Register = () => {
-  const[user,setUser]=useState({username:"",password:""});
+  // const[user,setUser]=useState({username:"",password:""});
   const navigate=useNavigate();
   const handlesubmit=(e)=>{
     e.preventDefault();
     console.log(user);
+    const user={username:"admin",password:"admin"}
     localStorage.setItem("user",JSON.stringify(user));
-    alert("Register Sucessfully");
+    alert("Register Successfully with admin credentials");
     navigate("/login");
   }
   return (
@@ -25,9 +26,9 @@ const Register = () => {
             <Form.Label>Username</Form.Label>
               <Form.Control
                 type='text'
-                placeholder='Username'
-                value={user.username}
-                onChange={(e)=> setUser({...user,username:e.target.value})}
+                placeholder='admin'
+                value="admin"
+                readOnly
                 style={{width:"100%"}}
                 />
             </Form.Group>
@@ -37,8 +38,8 @@ const Register = () => {
               <Form.Control
                type='password'
                placeholder='Password'
-               value={user.password}
-               onChange={(e)=> setUser({...user,password:e.target.value})}
+               value='admin'
+               readOnly
                style={{width:"100%"}}
                />
             </Form.Group>

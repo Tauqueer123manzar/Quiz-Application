@@ -9,10 +9,10 @@ const Login = () => {
   const handlesubmit=(e)=>{
     e.preventDefault();
     console.log(user);
-    const Storeduser= JSON.parse(localStorage.getItem('user'));
-    if(Storeduser.username===user.username && Storeduser.password===user.password){
+    // const Storeduser= JSON.parse(localStorage.getItem('user'));
+    if(user.username==="admin" && user.password==="admin"){
          localStorage.setItem("isLoggedIn",true);
-         alert("Login Sucessfully");
+         alert("Login Sucessfully as admin");
          navigate("/");
     }else{
       alert("Incorrect username and password");
