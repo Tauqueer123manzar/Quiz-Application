@@ -5,16 +5,28 @@ import { Quizdata } from '../Data/Quizdata'
 
 const Quiz = () => {
    const [currentquestion, setCurrentquestion] = useState(0);
-
+   const [score,setScore]=useState(0);
+   const [clickedoption,setClickedoption]=useState(null);
    
    const ChangeQuestion = () => {
+    if(clickedoption !=null){
+    updateScore();
     if (currentquestion < Quizdata.length - 1) {
       setCurrentquestion(currentquestion + 1); 
+      setClickedoption(null);
     } else {
-      
+         alert(`Quiz finished! Your score is ${score + (clickedoption === Quizdata[currentquestion].answer ? 1 : 0)}.`);
+    }
+  }else{
+        alert("Please select an option");
     }
   };
 
+  const updateScore=()=>{
+    if(clickedoption===Quizdata[currentquestion].answer){
+      setScore(score+1);
+    }
+  }
   return (
     <>
       <Container fluid style={{ height: "100%", width: "100%" }}>
@@ -32,7 +44,8 @@ const Quiz = () => {
                     return (
                       <Button 
                         key={index}
-                        className='option-btn btn btn-light shadow' 
+                        className={`option-btn btn btn-light shadow ${clickedoption === index ? "checked" : ""}`}
+                        onClick={()=> setClickedoption(index+1)}
                         style={{ marginLeft: "70px", marginTop: "15px" }}
                       >
                         {option}
@@ -61,3 +74,4 @@ const Quiz = () => {
 }
 
 export default Quiz;
+
