@@ -18,7 +18,7 @@ const Register = () => {
     <Container fluid style={{height:"100%",width:"100%"}}>
       <Row className='bg-white' style={{height:"100%",width:"100%"}}>
           <h1 className='text-center mt-5 text-dark' style={{fontFamily:"initial",fontWeight:"bold"}}>User Register</h1>
-          <Col xs={12} md={8} className='d-flex justify-content-center align-items-center mt-4 mb-5 w-100'>
+          <Col xs={12} md={8} className='d-flex justify-content-center align-items-center mt-4 w-100'>
           <Form className='p-5 bg-rounded shadow-lg' style={{width:"500px"}} onSubmit={handlesubmit}>
             <Form.Group className='m-4'>
             <Form.Label>Username</Form.Label>
