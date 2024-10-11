@@ -10,6 +10,7 @@ const Register = () => {
     e.preventDefault();
     console.log(user);
     localStorage.setItem("user",JSON.stringify(user));
+    alert("Register Sucessfully");
     navigate("/login");
   }
   return (
