@@ -1,10 +1,10 @@
 import React from 'react'
-import Home from './pages/Home'
 import {BrowserRouter as Router,Routes,Route} from 'react-router-dom'
 import Login from './components/Login'
 import Register from './components/Register'
 import Quiz from './components/Quiz'
 import Topbar from './components/Topbar'
+import Home from './pages/Home'
 const App = () => {
   return (
     <>
