@@ -66,3 +66,11 @@
     margin-top: 10px;
     color: #4caf50;
 }
+@media (max-width: 767px){
+    .box{
+      width: 100%; 
+    }
+    .option-btn{
+        width: 250px;
+    }
+}
